@@ -50,7 +50,7 @@ const counts = {
   bytes: Buffer.byteLength(xml),
   lines: xml.split("\n").length,
   sections: (xml.match(/<b:section\b/g) ?? []).length,
-  widgets: (xml.match(/<b:widget\b/g) ?? []).length,
+  widgets: (xml.match(/<b:widget(?=[\s>])/g) ?? []).length,
   includables: (xml.match(/<b:includable\b/g) ?? []).length,
 };
 
