@@ -98,7 +98,7 @@ Generated from \`${candidate}\`.
 - Size: ${(Buffer.byteLength(xml) / 1024).toFixed(1)} KiB
 - Lines: ${xml.split("\n").length}
 - Blogger sections: ${(xml.match(/<b:section\b/g) ?? []).length}
-- Blogger widgets: ${(xml.match(/<b:widget\b/g) ?? []).length}
+- Blogger widgets: ${(xml.match(/<b:widget(?=[\s>])/g) ?? []).length}
 - External scripts: ${externalScripts.length}
 
 ## Risk checks
