@@ -118,8 +118,8 @@ function Brand({ footer = false }: { footer?: boolean }) {
       <Image
         className="brand-logo"
         src="/the-bukit-besi-logo.svg"
-        width="52"
-        height="52"
+        width={52}
+        height={52}
         alt=""
         priority={!footer}
       />
