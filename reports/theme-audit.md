@@ -5,9 +5,9 @@ Generated from `blogger/production/thebukitbesi.xml`.
 ## Snapshot
 
 - Size: 307.4 KiB
-- Lines: 4570
+- Lines: 4567
 - Blogger sections: 22
-- Blogger widgets: 220
+- Blogger widgets: 36
 - External scripts: 5
 
 ## Risk checks
@@ -34,7 +34,7 @@ Generated from `blogger/production/thebukitbesi.xml`.
 - `https://news.google.com/swg/js/v1/swg-basic.js`
 - `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0182550701431501`
 - `${r}`
-- `https://cdn.jsdelivr.net/gh/tbbcom/on@main/master-ads-injector.js`
+- `https://cdn.jsdelivr.net/gh/tbbcom/on@0dca42de260846ac87d369048af6ab3e86e95e4e/master-ads-injector.js`
 
 ## Interpretation
 
