@@ -1336,7 +1336,7 @@ body{
 .footer-widgets .list-style li{margin:0}
 .footer-widgets .list-style a{
   display:inline-flex;
-  min-height:2.25rem;
+  min-height:2.75rem;
   align-items:center;
   padding:.4rem .65rem;
   border:1px solid rgb(255 255 255 / 13%);
@@ -1467,6 +1467,7 @@ body{
   			<meta expr:content='data:blog.metaDescription.escaped' name='description'/>
 			<b:elseif cond='data:view.isError'/>
   			<title>Page Not Found | <data:blog.title.escaped/></title>
+  			<meta content='Halaman yang dicari tidak ditemui. Kembali ke The Bukit Besi untuk maklumat terkini dan panduan berguna.' name='description'/>
 			<b:else/>
   			<title><data:view.title.escaped/> | <data:blog.title.escaped/></title>
   			<meta expr:content='data:blog.metaDescription.escaped' name='description'/>
@@ -2979,7 +2980,7 @@ body{
       &quot;headline&quot;: &quot;<data:view.title.jsonEscaped/>&quot;,
       &quot;image&quot;: [
         &quot;<b:eval expr='data:view.featuredImage ? resizeImage(data:view.featuredImage, 1200, &quot;16:9&quot;) : &quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5-p8tEVCMM7QDy-l92oo94Nc48N0c5ebiwQKr5hF5sj1p8NGZ0BZ4TuvG0i94FbOC0pf9ZvzUdKOYe7DeGIRnPAyZlFUvawCiPxY0ut7B0n5srvStf7TwDCtU2LdOh5nH_lHfHbFRjMviQBmD0kzd4VsFCSHKSb-pFp8dpEf38rYrjOqhWqh0HmqqzenH/s1600/the-bukit-besi-16x9.webp&quot;'/>&quot;,
-        &quot;<b:eval expr='data:view.featuredImage ? resizeImage(data:view.featuredImage, 1200, &quot;4:3&quot;) : &quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDSlhyphenhyphenYzv3Py8HZGvH_UpQJlw5KqEZhwuEVtUANw5_CHFl1-7cKVJDy0Yx2ZIpwikCnJhDAXUexk7vm5j0J5ArCC6cHtPQZ99QJ-Qlz-0dCNs515WbJalsF_BsEIjS7Nt8BvjOVJr9HJR40qy59eEuZEIL0IIfQSuZH3nrMlLLAl3aSGe9vVhyphenhyphen0W7sLRV1/s1600/the-bukit-besi-4x3.webp&quot;'/>&quot;,
+        &quot;<b:eval expr='data:view.featuredImage ? resizeImage(data:view.featuredImage, 1200, &quot;4:3&quot;) : &quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDSl--Yzv3Py8HZGvH_UpQJlw5KqEZhwuEVtUANw5_CHFl1-7cKVJDy0Yx2ZIpwikCnJhDAXUexk7vm5j0J5ArCC6cHtPQZ99QJ-Qlz-0dCNs515WbJalsF_BsEIjS7Nt8BvjOVJr9HJR40qy59eEuZEIL0IIfQSuZH3nrMlLLAl3aSGe9vV--0W7sLRV1/s1600/the-bukit-besi-4x3.webp&quot;'/>&quot;,
         &quot;<b:eval expr='data:view.featuredImage ? resizeImage(data:view.featuredImage, 1200, &quot;1:1&quot;) : &quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjThHXkRAhHLiF0ZHU90KC3jYwiFZrP0ChXTEMjC2AKHtJoLKqhCwvLzCztWZ6IswDReYnjGa_T6x6NXqIoQMYqMtG_dxV2ChwTUPLLSxEgvsjOLsnR6bOh3tHEnJMYJDhj0kT61aNZTPGzHN9QoaMuhcbd3zM9u39Vkw6F3YKbiIsABRHlpFuwyaL4wIvz/s1600/the-bukit-besi-1x1.webp&quot;'/>&quot;
       ],
       &quot;author&quot;: {
@@ -3042,18 +3043,14 @@ body{
       &quot;headline&quot;: &quot;<data:view.title.jsonEscaped/>&quot;,
       &quot;image&quot;: [
         &quot;<b:eval expr='data:view.featuredImage ? resizeImage(data:view.featuredImage, 1200, &quot;16:9&quot;) : &quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5-p8tEVCMM7QDy-l92oo94Nc48N0c5ebiwQKr5hF5sj1p8NGZ0BZ4TuvG0i94FbOC0pf9ZvzUdKOYe7DeGIRnPAyZlFUvawCiPxY0ut7B0n5srvStf7TwDCtU2LdOh5nH_lHfHbFRjMviQBmD0kzd4VsFCSHKSb-pFp8dpEf38rYrjOqhWqh0HmqqzenH/s1600/the-bukit-besi-16x9.webp&quot;'/>&quot;,
-        &quot;<b:eval expr='data:view.featuredImage ? resizeImage(data:view.featuredImage, 1200, &quot;4:3&quot;) : &quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDSlhyphenhyphenYzv3Py8HZGvH_UpQJlw5KqEZhwuEVtUANw5_CHFl1-7cKVJDy0Yx2ZIpwikCnJhDAXUexk7vm5j0J5ArCC6cHtPQZ99QJ-Qlz-0dCNs515WbJalsF_BsEIjS7Nt8BvjOVJr9HJR40qy59eEuZEIL0IIfQSuZH3nrMlLLAl3aSGe9vVhyphenhyphen0W7sLRV1/s1600/the-bukit-besi-4x3.webp&quot;'/>&quot;,
+        &quot;<b:eval expr='data:view.featuredImage ? resizeImage(data:view.featuredImage, 1200, &quot;4:3&quot;) : &quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDSl--Yzv3Py8HZGvH_UpQJlw5KqEZhwuEVtUANw5_CHFl1-7cKVJDy0Yx2ZIpwikCnJhDAXUexk7vm5j0J5ArCC6cHtPQZ99QJ-Qlz-0dCNs515WbJalsF_BsEIjS7Nt8BvjOVJr9HJR40qy59eEuZEIL0IIfQSuZH3nrMlLLAl3aSGe9vV--0W7sLRV1/s1600/the-bukit-besi-4x3.webp&quot;'/>&quot;,
         &quot;<b:eval expr='data:view.featuredImage ? resizeImage(data:view.featuredImage, 1200, &quot;1:1&quot;) : &quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjThHXkRAhHLiF0ZHU90KC3jYwiFZrP0ChXTEMjC2AKHtJoLKqhCwvLzCztWZ6IswDReYnjGa_T6x6NXqIoQMYqMtG_dxV2ChwTUPLLSxEgvsjOLsnR6bOh3tHEnJMYJDhj0kT61aNZTPGzHN9QoaMuhcbd3zM9u39Vkw6F3YKbiIsABRHlpFuwyaL4wIvz/s1600/the-bukit-besi-1x1.webp&quot;'/>&quot;
       ],
       &quot;author&quot;: {
         &quot;@type&quot;: &quot;Person&quot;,
         &quot;@id&quot;: &quot;<data:blog.homepageUrl.canonical.jsonEscaped/>#author&quot;,
         &quot;name&quot;: &quot;<data:post.author.name.jsonEscaped/>&quot;,
-        &quot;url&quot;: &quot;<data:post.author.profileUrl.jsonEscaped/>&quot;,
-        &quot;sameAs&quot;: [
-          &quot;https://www.facebook.com/bukitbesi&quot;,
-          &quot;https://twitter.com/bukitbesiblog&quot;
-        ]
+        &quot;url&quot;: &quot;<data:post.author.profileUrl.jsonEscaped/>&quot;
       },
       &quot;publisher&quot;: {
         &quot;@type&quot;: &quot;Organization&quot;,
@@ -4546,7 +4543,7 @@ var a;"use strict";!function(e){e.fn.pbtMenu=function(){return this.each(functio
 <script>
 //<![CDATA[document.addEventListener("DOMContentLoaded",function(){const e=document.querySelectorAll(".post-body table");e.forEach(function(e){if("table-responsive-wrapper"!==e.parentElement.className){const t=document.createElement("div");t.className="table-responsive-wrapper",e.parentNode.insertBefore(t,e),t.appendChild(e)}})});//]]>
 </script>
-      <script defer='defer' src='https://cdn.jsdelivr.net/gh/tbbcom/on@main/master-ads-injector.js'/>
+      <script defer='defer' src='https://cdn.jsdelivr.net/gh/tbbcom/on@0dca42de260846ac87d369048af6ab3e86e95e4e/master-ads-injector.js'/>
     <script>
 //<![CDATA[
 (function() {
