@@ -1,8 +1,19 @@
 import { readFile, writeFile } from "node:fs/promises";
+import { resolve, sep } from "node:path";
 
 const candidate =
   process.argv[2] ?? "blogger/production/thebukitbesi.xml";
-let xml = await readFile(candidate, "utf8");
+const candidatePath = resolve(candidate);
+const backupRoot = resolve("blogger/backups");
+
+if (
+  candidatePath === backupRoot ||
+  candidatePath.startsWith(`${backupRoot}${sep}`)
+) {
+  throw new Error("Refusing to migrate an immutable Blogger backup.");
+}
+
+let xml = await readFile(candidatePath, "utf8");
 const changes = [];
 
 function replaceOnce(label, search, replacement) {
@@ -56,7 +67,7 @@ replaceOnce(
   "- Legacy jQuery isolated pending tested vanilla-JS parity migration",
 );
 
-await writeFile(candidate, xml);
+await writeFile(candidatePath, xml);
 console.log(`Applied ${changes.length} safe migrations to ${candidate}:`);
 for (const change of changes) console.log(`- ${change}`);
 
