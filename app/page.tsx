@@ -171,9 +171,19 @@ export default function Home() {
         </div>
         <nav className="main-nav" aria-label="Navigasi utama">
           <div className="shell nav-inner">
-            <button className="icon-button menu-button" aria-label="Buka menu">
-              <MenuIcon />
-            </button>
+            <details className="mobile-nav-menu">
+              <summary className="icon-button menu-button" aria-label="Buka menu">
+                <MenuIcon />
+              </summary>
+              <div className="mobile-nav-links" aria-label="Menu mudah alih">
+                <a href="#">Utama</a>
+                <a href="#terkini">Terkini</a>
+                <a href="#bukit-besi">Bukit Besi</a>
+                <a href="#panduan">Panduan</a>
+                <a href="#direktori">Direktori</a>
+                <a href="#alat">Alat</a>
+              </div>
+            </details>
             <div className="nav-links">
               <a className="active" href="#">
                 Utama
