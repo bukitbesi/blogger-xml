@@ -30,6 +30,9 @@ const worker = {
     const url = new URL(request.url);
 
     if (url.pathname === "/_vinext/image") {
+      if (!env.ASSETS || !env.IMAGES) {
+        return new Response("Image optimization is unavailable: missing ASSETS or IMAGES binding.", { status: 501 });
+      }
       const allowedWidths = [...DEFAULT_DEVICE_SIZES, ...DEFAULT_IMAGE_SIZES];
       return handleImageOptimization(request, {
         fetchAsset: (path) => env.ASSETS.fetch(new Request(new URL(path, request.url))),
