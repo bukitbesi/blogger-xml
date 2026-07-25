@@ -1,0 +1,43 @@
+name: Validate Blogger theme
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Validate production Blogger XML
+        run: npm run validate:blogger
+
+      - name: Audit SEO and performance risks
+        run: npm run audit:blogger
+
+      - name: Run Blogger regression tests
+        run: npm run test:blogger
+
+      - name: Lint Sites reference
+        run: npm run lint

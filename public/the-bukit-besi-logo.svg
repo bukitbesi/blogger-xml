@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 104 104" role="img" aria-labelledby="title">
+  <title id="title">Logo The Bukit Besi</title>
+  <defs>
+    <linearGradient id="blue" x1="12" y1="10" x2="92" y2="94" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#1e40af"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#blue)" d="M16 4h72c6.6 0 12 5.4 12 12v61c0 5.2-3.3 9.8-8.2 11.4L23.8 101C14.3 102.7 4 96.1 4 86.4V16C4 9.4 9.4 4 16 4Z"/>
+  <path fill="#fff" opacity=".18" d="M7 76 44 28l18 23 10-13 25 35v8.7c0 4-2.6 7.6-6.5 8.5L25 101C15.3 102.8 7 95.4 7 86Z"/>
+  <text x="52" y="65" fill="#fff" font-family="Arial, sans-serif" font-size="32" font-weight="800" text-anchor="middle">BB</text>
+</svg>
