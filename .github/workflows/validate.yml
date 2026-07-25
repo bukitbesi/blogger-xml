@@ -34,10 +34,18 @@ jobs:
         run: npm run validate:blogger
 
       - name: Audit SEO and performance risks
-        run: npm run audit:blogger
+        run: |
+          npm run audit:blogger
+          git diff --exit-code -- reports/theme-audit.md
 
       - name: Run Blogger regression tests
         run: npm run test:blogger
+
+      - name: Build Sites reference
+        run: npm run build
+
+      - name: Run rendered HTML smoke test
+        run: node --test tests/rendered-html.test.mjs
 
       - name: Lint Sites reference
         run: npm run lint
