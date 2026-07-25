@@ -1,0 +1,10 @@
+# Complex Blogger XML work benefits from Sol's deeper analysis and polish.
+model = "gpt-5.6-sol"
+model_reasoning_effort = "high"
+
+# Keep delegated, repeatable scans efficient. Explicit task-level choices may
+# still use Luna medium when that model is available in the active client.
+[agents]
+default_subagent_model = "gpt-5.6-luna"
+default_subagent_reasoning_effort = "medium"
+
