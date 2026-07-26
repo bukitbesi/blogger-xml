@@ -6,19 +6,28 @@ const original = xml;
 
 function replaceOnce(label, pattern, replacement) {
   const next = xml.replace(pattern, replacement);
-  if (next === xml) throw new Error(`Migration failed: ${label}`);
+  if (next === xml) throw new Error(`Expected migration target not found: ${label}`);
   xml = next;
 }
 
+function replaceIfPresent(label, pattern, replacement) {
+  const next = xml.replace(pattern, replacement);
+  if (next !== xml) {
+    xml = next;
+    return true;
+  }
+  return false;
+}
+
 // Remove Microsoft Clarity: unnecessary third-party JS on every page.
-replaceOnce(
+replaceIfPresent(
   'remove Microsoft Clarity',
   /\s*<script type='text\/javascript'>\s*\(function\(c,l,a,r,i,t,y\)\{[\s\S]*?clarity\.ms\/tag\/[\s\S]*?<\/script>\s*/,
   '\n'
 );
 
 // Remove Reader Revenue Manager/SWG. This is not Google News verification.
-replaceOnce(
+replaceIfPresent(
   'remove Google SWG/RRM',
   /\s*<script async='async' src='https:\/\/news\.google\.com\/swg\/js\/v1\/swg-basic\.js'\/>[\s\S]*?<\/script>\s*/,
   '\n'
