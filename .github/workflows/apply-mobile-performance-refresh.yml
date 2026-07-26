@@ -24,13 +24,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
 
-      - name: Apply migration
-        run: node scripts/apply-mobile-performance-refresh.mjs
+      - name: Install locked dependencies
+        run: npm ci
 
       - name: Validate Blogger XML
         run: |
-          npm install
           npm run validate:blogger
           npm run test:blogger
 
