@@ -3,14 +3,7 @@
 <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='2.1.0' expr:class='data:blog.languageDirection' expr:dir='data:blog.languageDirection' expr:lang='data:blog.localeUnderscoreDelimited' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
   <b:with value='data:view.isSearch and (data:blog.view == &quot;json&quot;)' var='isFeed'>
     <head>
-      <script type='text/javascript'>
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src=&quot;https://www.clarity.ms/tag/&quot;+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, &quot;clarity&quot;, &quot;script&quot;, &quot;syxsjt7zf0&quot;);
-	</script>
-      <b:include name='pbt-head'/>
+<b:include name='pbt-head'/>
       <b:if cond='!data:view.isLayoutMode and !data:isFeed'>
         <meta content='origin-when-cross-origin' name='referrer'/>
         <meta content='28851edbaf4d68b4fd39bc8ec2e0b970' name='p:domain_verify'/>
@@ -27,27 +20,7 @@
     &#39;page_location&#39;: window.location.href,
     &#39;page_path&#39;: window.location.pathname
   });</script>
-        
-<script async='async' src='https://news.google.com/swg/js/v1/swg-basic.js'/>
-
-<script>
-//<![CDATA[
-  (self.SWG_BASIC = self.SWG_BASIC || []).push( basicSubscriptions => {
-    try {
-      basicSubscriptions.init({
-        type: "NewsArticle",
-        isPartOfType: ["Product"],
-        isPartOfProductId: "CAownu29DA:openaccess",
-        clientOptions: { theme: "light", lang: "ms" },
-      });
-    } catch (error) {
-      console.warn("RRM failed to initialize:", error);
-    }
-  });
-//]]>
-</script>
-
-        <b:skin version='2.1.0'><![CDATA[ /* 
+<b:skin version='2.1.0'><![CDATA[ /* 
   =============================================
   THE BUKIT BESI BLOG — OPTIMIZED THEME v2026.07
   Pro enhancements applied:
@@ -1263,7 +1236,43 @@ body {background:#f8fafc; text-rendering:optimizeLegibility; -webkit-font-smooth
 
 @media (prefers-reduced-motion:reduce) {
 *, *::before, *::after {scroll-behavior:auto!important; transition-duration:.01ms!important; animation-duration:.01ms!important; animation-iteration-count:1!important;}
-}]]></b:skin>
+}
+/* TBB 2026.07 mobile-fit + performance patch */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video,iframe{max-width:100%}
+.post-body img{height:auto}
+.share-a .sl,.share-toggle,.to-top,.menu-toggle,.search-toggle,.darkmode-toggle{min-width:44px;min-height:44px}
+.entry-thumbnail,.thumbnail,.popular-posts .post{contain:layout paint}
+.article-ads:empty,.before-ads:empty,.after-ads:empty,.post-footer-ads:empty{display:none!important;min-height:0!important;margin:0!important;padding:0!important}
+ins.adsbygoogle[data-ad-status='unfilled']{display:none!important;min-height:0!important;margin:0!important}
+.site-footer .footer{padding-top:2rem;padding-bottom:1.25rem}
+.site-footer .widget{margin-bottom:1.5rem}
+.footer-info .logo img,.footer-logo img{max-width:220px;height:auto}
+.footer .social{margin-top:1rem}
+.footer .social a{min-width:44px;min-height:44px}
+.footer .label-list,.footer .cloud-label{gap:.5rem}
+.footer .label-list a,.footer .cloud-label a{min-height:38px;padding:.5rem .75rem}
+@media (max-width:767px){
+  :root{--mobile-gutter:14px}
+  .container,.content-wrap,.main-inner,.header-inner,.footer .container,.footer-bar .container{width:100%;max-width:100%;padding-left:var(--mobile-gutter)!important;padding-right:var(--mobile-gutter)!important}
+  .main-logo img{max-width:min(56vw,250px);height:auto}
+  .blog-posts,.blog-post,.post-body,.entry-content,.sidebar .widget,.content-section .widget{max-width:100%;min-width:0}
+  .post-body{overflow-wrap:anywhere;word-break:normal}
+  .post-body table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .post-body pre{max-width:100%;overflow:auto}
+  .popular-posts .post:first-child .entry-title{font-size:clamp(1.25rem,6vw,1.75rem);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .popular-posts .post:not(:first-child) .entry-title{font-size:1rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .popular-posts .entry-thumbnail{flex:0 0 34%;max-width:34%}
+  .site-footer .footer{padding-top:1.75rem;padding-bottom:1rem}
+  .footer-info,.footer .widget-content{max-width:100%}
+  .footer-bar{padding-block:1rem}
+  .footer-bar ul{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem 1.25rem}
+  .footer-bar li{margin:0!important}
+  .newsletter input,.newsletter button{min-height:48px}
+  .to-top{right:var(--mobile-gutter);bottom:calc(16px + env(safe-area-inset-bottom))}
+}
+
+]]></b:skin>
       </b:if>
       <b:defaultmarkups>
         <b:defaultmarkup type='Common'>
@@ -1290,14 +1299,12 @@ body {background:#f8fafc; text-rendering:optimizeLegibility; -webkit-font-smooth
               <meta content='1200' property='og:image:width'/>
               <meta content='675' property='og:image:height'/>
               <meta expr:content='data:view.title.escaped' property='og:image:alt'/>
-              <meta content='image/webp' property='og:image:type'/>
               <meta expr:content='resizeImage(data:view.featuredImage, 1200, &quot;16:9&quot;)' name='twitter:image'/>
             <b:elseif cond='data:blog.postImageUrl'/>
               <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, &quot;16:9&quot;)' property='og:image'/>
               <meta content='1200' property='og:image:width'/>
               <meta content='675' property='og:image:height'/>
               <meta expr:content='data:view.title.escaped' property='og:image:alt'/>
-              <meta content='image/webp' property='og:image:type'/>
               <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, &quot;16:9&quot;)' name='twitter:image'/>
             </b:if>
             <meta content='summary_large_image' name='twitter:card'/>
@@ -2199,7 +2206,7 @@ body {background:#f8fafc; text-rendering:optimizeLegibility; -webkit-font-smooth
                 <b:include data='post' name='postBody'/>
               </div>
               <b:include cond='data:view.isPost and data:allBylineItems.labels' data='post' name='postLabels'/>
-              <b:include cond='data:view.isPost and data:allBylineItems.share' data='post' name='postShareButtons'/>
+              <b:include cond='data:view.isPost' data='post' name='postShareButtons'/>
             </div>
           </b:includable>
           <b:includable id='linkShare'/>
@@ -3602,7 +3609,7 @@ body {background:#f8fafc; text-rendering:optimizeLegibility; -webkit-font-smooth
                           <b:include data='post' name='postBody'/>
                         </div>
                         <b:include cond='data:view.isPost and data:allBylineItems.labels' data='post' name='postLabels'/>
-                        <b:include cond='data:view.isPost and data:allBylineItems.share' data='post' name='postShareButtons'/>
+                        <b:include cond='data:view.isPost' data='post' name='postShareButtons'/>
                       </div>
                     </b:includable>
                     <b:includable id='itemPostData' var='post'>
@@ -4447,7 +4454,40 @@ var a;"use strict";!function(e){e.fn.pbtMenu=function(){return this.each(functio
 })();
 //]]>
 </script>
-    </body>
+    
+<script type='text/javascript'>
+//<![CDATA[
+(function(){
+  'use strict';
+  function ready(fn){document.readyState==='loading'?document.addEventListener('DOMContentLoaded',fn,{once:true}):fn();}
+  ready(function(){
+    document.querySelectorAll('.post-share a,.post-share button').forEach(function(el){
+      if(!el.getAttribute('aria-label')){
+        var text=(el.textContent||el.title||'Kongsi artikel').trim();
+        el.setAttribute('aria-label',text||'Kongsi artikel');
+      }
+    });
+    document.querySelectorAll('.share-toggle').forEach(function(btn){
+      if(!navigator.share)return;
+      btn.addEventListener('click',function(ev){
+        var title=document.title;
+        var url=location.href;
+        navigator.share({title:title,text:title,url:url}).catch(function(){});
+      });
+    });
+    document.querySelectorAll('.copy-link button').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var input=btn.parentElement&&btn.parentElement.querySelector('input');
+        var value=input?input.value:location.href;
+        if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(value).catch(function(){});}
+        else if(input){input.select();document.execCommand('copy');}
+      });
+    });
+  });
+})();
+//]]>
+</script>
+</body>
     <b:if cond='data:isFeed'>
       <b:eval expr='&quot;--&gt;&lt;/body&gt;&quot;'/>
     </b:if>
