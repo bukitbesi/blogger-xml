@@ -4434,8 +4434,6 @@ var a;"use strict";!function(e){e.fn.pbtMenu=function(){return this.each(functio
 <script>
 //<![CDATA[document.addEventListener("DOMContentLoaded",function(){const e=document.querySelectorAll(".post-body table");e.forEach(function(e){if("table-responsive-wrapper"!==e.parentElement.className){const t=document.createElement("div");t.className="table-responsive-wrapper",e.parentNode.insertBefore(t,e),t.appendChild(e)}})});//]]>
 </script>
-      <script defer='defer' src='https://cdn.jsdelivr.net/gh/tbbcom/on@0dca42de260846ac87d369048af6ab3e86e95e4e/master-ads-injector.js'/>
-    <script>
 //<![CDATA[
 (function() {
     var postImages = document.querySelectorAll('.post-body img');
