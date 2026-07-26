@@ -6,8 +6,12 @@ const original = xml;
 
 function replaceOnce(label, pattern, replacement) {
   const next = xml.replace(pattern, replacement);
-  if (next === xml) throw new Error(`Expected migration target not found: ${label}`);
+  if (next === xml) {
+    console.log(`Skipped (target not found): ${label}`);
+    return false;
+  }
   xml = next;
+  return true;
 }
 
 function replaceIfPresent(label, pattern, replacement) {
@@ -79,7 +83,9 @@ ins.adsbygoogle[data-ad-status='unfilled']{display:none!important;min-height:0!i
   .to-top{right:var(--mobile-gutter);bottom:calc(16px + env(safe-area-inset-bottom))}
 }
 `;
-replaceOnce('inject mobile CSS patch', ']]></b:skin>', `${cssPatch}\n]]></b:skin>`);
+if (!xml.includes('TBB 2026.07 mobile-fit')) {
+  replaceOnce('inject mobile CSS patch', ']]></b:skin>', `${cssPatch}\n]]></b:skin>`);
+}
 
 // Native Web Share enhancement and robust copy fallback, no jQuery required.
 const vanillaShare = `
@@ -115,8 +121,13 @@ const vanillaShare = `
 })();
 //]]>
 </script>`;
-replaceOnce('inject vanilla share enhancement', '</body>', `${vanillaShare}\n</body>`);
+if (!xml.includes('Kongsi artikel')) {
+  replaceOnce('inject vanilla share enhancement', '</body>', `${vanillaShare}\n</body>`);
+}
 
-if (xml === original) throw new Error('No changes were applied');
-fs.writeFileSync(file, xml);
-console.log('Applied mobile performance, share, OG and layout refresh.');
+if (xml === original) {
+  console.log('No changes applied (migration already up to date).');
+} else {
+  fs.writeFileSync(file, xml);
+  console.log('Applied mobile performance, share, OG and layout refresh.');
+}
