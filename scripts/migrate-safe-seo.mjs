@@ -19,7 +19,8 @@ const changes = [];
 function replaceOnce(label, search, replacement) {
   const next = xml.replace(search, replacement);
   if (next === xml) {
-    throw new Error(`Expected migration target not found: ${label}`);
+    console.log(`Skipped (already migrated or not found): ${label}`);
+    return;
   }
   xml = next;
   changes.push(label);
