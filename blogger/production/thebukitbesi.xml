@@ -4629,6 +4629,22 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}
       clone.querySelectorAll('h1').forEach(element => element.remove());
       mobileLogo.appendChild(clone);
     }
+    const mmFooter = document.querySelector('.mm-footer');
+    if (mmFooter) {
+      const social = document.querySelector('.footer-info .social');
+      const footerMenu = document.querySelector('.footer-menu ul');
+      if (social) {
+        const socialClone = social.cloneNode(true);
+        socialClone.className = 'social color';
+        socialClone.querySelectorAll('.text').forEach(el => el.remove());
+        mmFooter.appendChild(socialClone);
+      }
+      if (footerMenu) {
+        const menuClone = footerMenu.cloneNode(true);
+        menuClone.className = 'links';
+        mmFooter.appendChild(menuClone);
+      }
+    }
   }
 
   function initStickyHeader() {
