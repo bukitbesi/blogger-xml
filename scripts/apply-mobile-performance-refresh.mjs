@@ -55,7 +55,7 @@ img,svg,video,iframe{max-width:100%}
 .share-a .sl,.share-toggle,.to-top,.menu-toggle,.search-toggle,.darkmode-toggle{min-width:44px;min-height:44px}
 .entry-thumbnail,.thumbnail,.popular-posts .post{contain:layout paint}
 img.thumbnail, img.avatar {object-fit:cover;width:100%;height:100%}
-.thumbnail, .avatar {opacity:1 !important}
+img.thumbnail, img.avatar {opacity:1 !important}
 .article-ads:empty,.before-ads:empty,.after-ads:empty,.post-footer-ads:empty{display:none!important;min-height:0!important;margin:0!important;padding:0!important}
 ins.adsbygoogle[data-ad-status='unfilled']{display:none!important;min-height:0!important;margin:0!important}
 .site-footer .footer{padding-top:2rem;padding-bottom:1.25rem}
