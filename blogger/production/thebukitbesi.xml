@@ -3377,8 +3377,7 @@ html.rtl{
         <b:tag name='script' src='https://cdn.jsdelivr.net/gh/tbbcom/local@eb1cbd4/asset/vanilla.js?v=1.0' type='text/javascript'/>
         <!-- Site Scripts -->
         <b:tag name='script' src='https://cdn.jsdelivr.net/gh/bukitbesi/blogger-xml@main/blogger/tbb.min.js' type='text/javascript'/>
-      </b:if>
-      <script>
+        <script>
         //<![CDATA[
         (function(){
           "use strict";
@@ -3394,6 +3393,7 @@ html.rtl{
         })();
         //]]>
       </script>
+      </b:if>
       <!-- Blogger Scripts -->
       <b:if cond='data:isFeed'>
         <b:eval expr='&quot;&lt;!--&quot;'/>
