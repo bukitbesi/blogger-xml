@@ -9,14 +9,20 @@ const xml = await readFile(candidate, "utf8");
 // jsDelivr but still ship as part of this theme, so risk checks must cover
 // their contents too, not just the XML text.
 const externalizedAssetSources = [
-  ...xml.matchAll(
-    /gh\/bukitbesi\/blogger-xml@[^/'"]+\/(blogger\/[^'"]+\.(?:css|js))/gi,
+  ...new Set(
+    [...xml.matchAll(/gh\/bukitbesi\/blogger-xml@[^/'\"]+\/(blogger\/[^'\"]+\.(?:css|js))/gi)].map(
+      (match) => match[1],
+    ),
   ),
-].map((match) => match[1]);
+];
 const externalizedAssetContents = await Promise.all(
-  externalizedAssetSources.map((path) =>
-    readFile(path, "utf8").catch(() => ""),
-  ),
+  externalizedAssetSources.map(async (assetPath) => {
+    try {
+      return await readFile(assetPath, "utf8");
+    } catch (error) {
+      throw new Error(`Missing externalized asset referenced by theme: ${assetPath}`);
+    }
+  }),
 );
 const auditableText = [xml, ...externalizedAssetContents].join("\n");
 
