@@ -5,6 +5,27 @@ const candidate =
 const reportPath = process.argv[3] ?? "reports/theme-audit.md";
 const xml = await readFile(candidate, "utf8");
 
+// Externalized theme assets (blogger/*.css, blogger/*.js) are hosted on
+// jsDelivr but still ship as part of this theme, so risk checks must cover
+// their contents too, not just the XML text.
+const externalizedAssetSources = [
+  ...new Set(
+    [...xml.matchAll(/gh\/bukitbesi\/blogger-xml@[^/'\"]+\/(blogger\/[^'\"]+\.(?:css|js))/gi)].map(
+      (match) => match[1],
+    ),
+  ),
+];
+const externalizedAssetContents = await Promise.all(
+  externalizedAssetSources.map(async (assetPath) => {
+    try {
+      return await readFile(assetPath, "utf8");
+    } catch (error) {
+      throw new Error(`Missing externalized asset referenced by theme: ${assetPath}`);
+    }
+  }),
+);
+const auditableText = [xml, ...externalizedAssetContents].join("\n");
+
 const checks = [
   {
     id: "jquery",
@@ -65,7 +86,7 @@ const checks = [
 ];
 
 const result = checks.map((check) => {
-  const count = (xml.match(check.pattern) ?? []).length;
+  const count = (auditableText.match(check.pattern) ?? []).length;
   return {
     ...check,
     count,
@@ -75,6 +96,9 @@ const result = checks.map((check) => {
 
 const externalScripts = [
   ...xml.matchAll(/<script[^>]+src=['"]([^'"]+)['"][^>]*\/?>/gi),
+  ...xml.matchAll(
+    /<b:tag[^>]+name=['"]script['"][^>]+src=['"]([^'"]+)['"][^>]*\/?>/gi,
+  ),
 ].map((match) => match[1]);
 
 const table = result
