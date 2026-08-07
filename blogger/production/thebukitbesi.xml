@@ -323,7 +323,6 @@ html.rtl{
               <link href='//cdn.jsdelivr.net' rel='preconnect'/>
               <link href='//pagead2.googlesyndication.com' rel='preconnect'/>
               <link href='//www.googletagmanager.com' rel='preconnect'/>
-              <link href='//www.clarity.ms' rel='preconnect'/>
               <link href='//blogger.googleusercontent.com' rel='dns-prefetch'/>
               <link href='//1.bp.blogspot.com' rel='dns-prefetch'/>
               <link href='//2.bp.blogspot.com' rel='dns-prefetch'/>
@@ -3377,8 +3376,7 @@ html.rtl{
         <b:tag name='script' src='https://cdn.jsdelivr.net/gh/tbbcom/local@eb1cbd4/asset/vanilla.js?v=1.0' type='text/javascript'/>
         <!-- Site Scripts -->
         <b:tag name='script' src='https://cdn.jsdelivr.net/gh/bukitbesi/blogger-xml@main/blogger/tbb.min.js' type='text/javascript'/>
-      </b:if>
-      <script>
+        <script>
         //<![CDATA[
         (function(){
           "use strict";
@@ -3394,6 +3392,7 @@ html.rtl{
         })();
         //]]>
       </script>
+      </b:if>
       <!-- Blogger Scripts -->
       <b:if cond='data:isFeed'>
         <b:eval expr='&quot;&lt;!--&quot;'/>

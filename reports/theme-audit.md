@@ -4,8 +4,8 @@ Generated from `blogger/production/thebukitbesi.xml`.
 
 ## Snapshot
 
-- Size: 202.1 KiB
-- Lines: 3459
+- Size: 202.0 KiB
+- Lines: 3458
 - Blogger sections: 22
 - Blogger widgets: 36
 - External scripts: 5
