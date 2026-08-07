@@ -496,7 +496,7 @@ table.tr-caption-container td.tr-caption{font-size:0.75rem;padding:0.25rem 0 0 0
 .is-dark .entry-labels span{background:var(--title-color);color:var(--outer-bg)}
 .entry-labels a:hover{background:var(--btn-bg);color:var(--btn-color)}
 .entry-labels {display:flex; flex-wrap:wrap; gap:4px; margin:0; align-items:baseline;}
-.entry-labels .labels-label {display:inline; width:auto; height:auto; padding:0; margin-right:4px;}
+.entry-labels .labels-label {display:inline; width:auto; height:auto; padding:5px 12px;border-radius:20px;border:1px solid #6b9ff9; margin-right:4px;}
 .entry-labels .label-link {display:inline; width:auto; height:auto; padding:0;}
 .post-share{margin:1.5rem 0 0}
 .share-a{display:flex;flex-wrap:wrap;align-items:start;gap:0.5rem}
