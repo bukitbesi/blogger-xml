@@ -896,7 +896,7 @@ ins.adsbygoogle-noablate[data-anchor-shown="true"]{z-index:990!important}
 @media (max-width: 30rem) {
 :root{--gap:0.65rem;--aspect-ratio:16/10;--aspect-ratio-2:16/10;--card-title:1.5rem}
 .site-footer{--padding:0 auto;}
-.container{padding:0 1.25rem}
+.container{padding:0 1.25rem;margin: 20px 0;}
 .main-search{top:1.25rem;max-width:calc(100% - 2.5rem);max-height:calc(100% - 2.5rem)}
 .featured-items .grid{padding:var(--gap) 1.25rem;margin:0 -1.25rem}
 .block2-grid{gap:1.25rem}
