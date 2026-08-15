@@ -9,8 +9,8 @@ const PRECACHE_URLS = [
   './index.html',
   './offline.html',
   './manifest.json',
-  './pwa-assets/src/icon-192.png',
-  './pwa-assets/src/icon-512.png',
+  './pwa/assets/src/icon-192.png',
+  './pwa/assets/src/icon-512.png',
   './styles.css'
 ];
 
