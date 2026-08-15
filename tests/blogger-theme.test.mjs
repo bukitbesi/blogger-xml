@@ -44,8 +44,12 @@ test("imported baseline stays available for rollback", async () => {
     readFile(backupPath),
   ]);
 
+  // Production is intentionally smaller than the immutable baseline: the
+  // bulk of the theme CSS and the site JS engine are externalized to
+  // blogger/style.min.css and blogger/tbb.min.js (CDN-cached across page
+  // views) instead of being duplicated inline on every request.
   assert.ok(backup.byteLength > 250_000);
-  assert.ok(production.byteLength > 250_000);
+  assert.ok(production.byteLength > 150_000);
   assert.notDeepEqual(production, backup);
 });
 
