@@ -1102,9 +1102,3 @@ body > ins.adsbygoogle, body > ins.adsbygoogle-noablate, #google-anno-sa, #googl
 .about-author .author-links {justify-content:center; flex-wrap:wrap;!important}
 .table-responsive-wrapper table {min-width:100%;}
 .table-responsive-wrapper th:first-child, .table-responsive-wrapper td:first-child {min-width:120px;}
-/* Fix: mobile header overflow (menu/dark toggle pushed off-screen) & breadcrumb whitespace */
-@media (max-width: 61.25rem) {
-.main-logo img {max-height:2.5rem;}}
-@media (max-width: 480px) {
-#breadcrumb a {width:auto;}.main-logo img {max-height:2.5rem;}
-}
