@@ -940,7 +940,7 @@ a {width:100%; height:auto;}
 .entry-thumbnail {width:100%; height:auto;}
 .popular-list .entry-header {width:100%;}
 }
-@media (max-width: 23.75rem) {
+@media (max-width: 18.75rem) {
 :root{--list-cols:minmax(0,7rem) minmax(0,1fr);--feat-title:1.375rem;--card-title:1.375rem}
 .card{--line-clamp:2}
 .post-header .entry-title{font-size:1.5rem}
@@ -1029,12 +1029,6 @@ body {background:#f8fafc; text-rendering:optimizeLegibility; -webkit-font-smooth
 @media (max-width:48rem) {
 .content-section .widget:not(.is-ad), .sidebar .widget {padding:1.125rem}
 .footer-sections {gap:2rem}
-}
-
-@media (max-width:30rem) {
-:root {--gap:1.25rem}
-.main-logo img {max-width:11rem; max-height:2.75rem}
-.widget-title .title {font-size:1.1rem}
 }
 
 @media (prefers-reduced-motion:reduce) {
