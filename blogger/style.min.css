@@ -1102,12 +1102,3 @@ body > ins.adsbygoogle, body > ins.adsbygoogle-noablate, #google-anno-sa, #googl
 .about-author .author-links {justify-content:center; flex-wrap:wrap;!important}
 .table-responsive-wrapper table {min-width:100%;}
 .table-responsive-wrapper th:first-child, .table-responsive-wrapper td:first-child {min-width:120px;}
-.adsbygoogle {display:block !important; max-width:100% !important; margin:15px auto !important; text-align:center !important; overflow:hidden !important;}
-.widget.HTML.is-ad {width:100%; margin:10px 0; display:flex; justify-content:center;}
-.search-toggle::before {content:none !important; display:none !important;}
-.header-inner {position:sticky; top:0; z-index:1000; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
-.header-header .container {margin:0 auto; padding:0 15px; height:70px; display:flex; align-items:center;}
-.widget-title {display:flex !important; justify-content:space-between !important; align-items:baseline !important; width:100% !important; margin-bottom:15px !important;}
-.widget-title .title {font-size:1.5rem !important; font-weight:bold !important; text-transform:capitalize !important; white-space:nowrap !important; display:inline-block !important; word-break:normal !important;}
-.flex-right {justify-content:flex-end !important;}
-.adsbygoogle, .adsbygoogle iframe {max-width:100% !important; width:100% !important; margin:0 auto !important;}
