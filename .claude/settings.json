@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://www.thebukitbesi.com/\" -o /tmp/tbb-home.html)",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://www.thebukitbesi.com/2025/10/pelepasan-cukai-2024-2025.html\" -o /tmp/tbb-post1.html)",
+      "Bash(grep -o 'getCard[^<]\\\\{0,80\\\\}' /tmp/tbb-post1.html)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s \"https://purge.jsdelivr.net/gh/bukitbesi/xml@main/asset/src/tbb-script.js\")",
+      "Bash(curl -s \"https://purge.jsdelivr.net/gh/bukitbesi/xml@main/asset/src/tbb-style.css\")",
+      "Bash(curl -s \"https://cdn.jsdelivr.net/gh/bukitbesi/xml@main/asset/src/tbb-script.js\")",
+      "Bash(curl -s \"https://cdn.jsdelivr.net/gh/bukitbesi/xml@main/asset/src/tbb-style.css\")"
+    ]
+  }
+}
