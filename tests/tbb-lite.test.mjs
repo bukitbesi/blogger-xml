@@ -73,3 +73,21 @@ test("performance and accessibility budgets", () => {
 test("footer credit is nofollow (sitewide template links must not pass PageRank)", () => {
   assert.match(xml, /<a href='https:\/\/www\.thebukitbesi\.com\/' rel='nofollow'>TBB Lite<\/a>/);
 });
+
+test("default colours pass WCAG AA (4.5:1) for text and links in light and dark mode", () => {
+  const def = Object.fromEntries([...xml.matchAll(/<Variable name="([^"]+)"[^>]*type="color" default="(#[0-9a-f]{6})"/g)].map((m) => [m[1], m[2]]));
+  const lum = (hex) => {
+    const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255).map((c) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  };
+  const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return Math.floor(((x + 0.05) / (y + 0.05)) * 100) / 100; };
+  const pairs = [
+    ["text.color", "page.bg"], ["text.color", "surface.bg"], ["muted.color", "page.bg"], ["muted.color", "surface.bg"],
+    ["link.color", "page.bg"], ["link.color", "surface.bg"], ["brand.ink", "brand.color"],
+    ["dark.text", "dark.bg"], ["dark.text", "dark.surface"], ["dark.muted", "dark.bg"], ["dark.muted", "dark.surface"],
+    ["dark.link", "dark.bg"], ["dark.link", "dark.surface"],
+  ];
+  for (const [fg, bg] of pairs) assert.ok(ratio(def[fg], def[bg]) >= 4.5, `${fg} on ${bg}: ${ratio(def[fg], def[bg])}:1`);
+  // Text never uses the brand colour directly, since the brand only has to pass 3:1 as a border or button fill.
+  assert.doesNotMatch(xml, /[{;]color:var\(--tbb-brand\)/);
+});

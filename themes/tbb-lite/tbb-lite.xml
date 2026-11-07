@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.0.0' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale.language' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.0.1' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale.language' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <!--
-  TBB Lite 1.0.0: a free, lightweight Blogger theme by The Bukit Besi
+  TBB Lite 1.0.1: a free, lightweight Blogger theme by The Bukit Besi
   https://www.thebukitbesi.com/
   Licence: CC BY 4.0. Keep the footer credit or credit the author elsewhere on the blog.
   Theme-owned JavaScript: one 0.3 KB inline menu toggle; the menu still works without it.
@@ -43,7 +43,7 @@
   <b:skin version='1.0.0'><![CDATA[/*
 -----------------------------------------------
 TBB Lite
-Version: 1.0.0
+Version: 1.0.1
 Author:  The Bukit Besi (https://www.thebukitbesi.com/)
 ----------------------------------------------- */
 
@@ -51,6 +51,7 @@ Author:  The Bukit Besi (https://www.thebukitbesi.com/)
 <Group description="Brand" selector="body">
   <Variable name="brand.color" description="Brand colour (links, buttons)" type="color" default="#e5002b" value="#e5002b"/>
   <Variable name="brand.ink" description="Text on brand colour" type="color" default="#ffffff" value="#ffffff"/>
+  <Variable name="link.color" description="Links (light mode, 4.5:1 on cards)" type="color" default="#dd002a" value="#dd002a"/>
 </Group>
 <Group description="Light colours" selector="body">
   <Variable name="page.bg" description="Page background" type="color" default="#ffffff" value="#ffffff"/>
@@ -65,6 +66,7 @@ Author:  The Bukit Besi (https://www.thebukitbesi.com/)
   <Variable name="dark.text" description="Dark mode text" type="color" default="#ececf1" value="#ececf1"/>
   <Variable name="dark.muted" description="Dark mode muted text" type="color" default="#a1a1aa" value="#a1a1aa"/>
   <Variable name="dark.line" description="Dark mode borders" type="color" default="#2e2e35" value="#2e2e35"/>
+  <Variable name="dark.link" description="Links (dark mode, 4.5:1 on cards)" type="color" default="#ff2d54" value="#ff2d54"/>
 </Group>
 <Group description="Fonts" selector="body">
   <Variable name="body.font" description="Body font" type="font" default="normal 400 17px system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" value="normal 400 17px system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"/>
@@ -77,12 +79,12 @@ Author:  The Bukit Besi (https://www.thebukitbesi.com/)
 */
 
 :root{
-  --tbb-brand:$(brand.color);--tbb-brand-ink:$(brand.ink);
+  --tbb-brand:$(brand.color);--tbb-brand-ink:$(brand.ink);--tbb-link:$(link.color);
   --tbb-bg:$(page.bg);--tbb-surface:$(surface.bg);--tbb-text:$(text.color);--tbb-muted:$(muted.color);--tbb-line:$(line.color);
   --tbb-max:$(content.width);--tbb-side:$(sidebar.width);--tbb-radius:12px;--tbb-gap:clamp(16px,3vw,32px)
 }
 @media (prefers-color-scheme:dark){
-  :root{--tbb-bg:$(dark.bg);--tbb-surface:$(dark.surface);--tbb-text:$(dark.text);--tbb-muted:$(dark.muted);--tbb-line:$(dark.line)}
+  :root{--tbb-bg:$(dark.bg);--tbb-surface:$(dark.surface);--tbb-text:$(dark.text);--tbb-muted:$(dark.muted);--tbb-line:$(dark.line);--tbb-link:$(dark.link)}
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -91,7 +93,7 @@ h1,h2,h3,h4{font:$(heading.font);line-height:1.25;margin:1.6em 0 .6em}
 h1{font-size:clamp(1.75rem,4vw,2.4rem);margin-top:0}
 h2{font-size:clamp(1.35rem,3vw,1.7rem)}
 h3{font-size:1.2rem}
-a{color:var(--tbb-brand);text-underline-offset:.18em}
+a{color:var(--tbb-link);text-underline-offset:.18em}
 a:hover{text-decoration-thickness:2px}
 img,video,iframe{max-width:100%}
 img{height:auto}
@@ -134,7 +136,7 @@ img{height:auto}
 .tbb-card__body{display:flex;flex-direction:column;gap:8px;padding:16px}
 .tbb-card__title{margin:0;font-size:1.15rem}
 .tbb-card__title a{color:var(--tbb-text);text-decoration:none}
-.tbb-card__title a:hover{color:var(--tbb-brand)}
+.tbb-card__title a:hover{color:var(--tbb-link)}
 .tbb-card__snippet{margin:0;color:var(--tbb-muted);font-size:.95rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .tbb-meta{display:flex;flex-wrap:wrap;gap:4px 12px;margin:0;font-size:.875rem;color:var(--tbb-muted)}
 .tbb-meta a{color:inherit}
@@ -159,7 +161,7 @@ img{height:auto}
 .tbb-post__body .tr-caption{font-size:.85rem;color:var(--tbb-muted)}
 .tbb-tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:32px 0 0;padding:0}
 .tbb-tags a,.tbb-labels a{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border:1px solid var(--tbb-line);border-radius:999px;color:var(--tbb-text);text-decoration:none;font-size:.9rem}
-.tbb-tags a:hover,.tbb-labels a:hover{border-color:var(--tbb-brand);color:var(--tbb-brand)}
+.tbb-tags a:hover,.tbb-labels a:hover{border-color:var(--tbb-brand);color:var(--tbb-link)}
 .tbb-author{display:flex;gap:16px;align-items:flex-start;margin-top:32px;padding:20px;background:var(--tbb-surface);border-radius:var(--tbb-radius)}
 .tbb-author img{border-radius:50%;flex:none}
 .tbb-author strong a{display:inline-flex;align-items:center;min-height:24px}
@@ -188,7 +190,7 @@ img{height:auto}
 .tbb-popular li+li{border-top:1px solid var(--tbb-line)}
 .tbb-popular img{display:block;width:72px;height:72px;object-fit:cover;border-radius:8px}
 .tbb-popular a{display:block;min-height:24px;color:var(--tbb-text);text-decoration:none;font-weight:600;line-height:1.35}
-.tbb-popular a:hover{color:var(--tbb-brand)}
+.tbb-popular a:hover{color:var(--tbb-link)}
 .tbb-popular li:not(:has(img)){grid-template-columns:1fr}
 .tbb-footer{margin-top:var(--tbb-gap);padding-block:var(--tbb-gap) 16px;background:var(--tbb-surface);border-top:1px solid var(--tbb-line);font-size:.95rem}
 .tbb-footer__cols{display:grid;gap:var(--tbb-gap);grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}

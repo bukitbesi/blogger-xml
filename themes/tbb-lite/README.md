@@ -7,7 +7,7 @@ is a 0.3 KB menu toggle, and the menu still works without it.
 | | |
 |---|---|
 | File | `tbb-lite.xml` |
-| Version | 1.0.0 |
+| Version | 1.0.1 |
 | Licence | [CC BY 4.0](LICENSE): free for personal and commercial blogs; keep the footer credit or credit the author elsewhere on the blog |
 | Blogger | Layouts v3, widget version 2 |
 
@@ -74,3 +74,10 @@ npm run preview:lite     # static preview pages in reports/tbb-lite-preview/
 
 The preview uses the theme's real CSS with the default variable values and sample markup that
 mirrors the template. It checks layout only; Blogger itself renders the data tags.
+
+## Changelog
+
+- **1.0.1:** separate link colours for light and dark mode (`link.color`, `dark.link`). The brand red used
+  as link text was 3.97:1 on the dark background and 4.45:1 on light cards, under the WCAG AA minimum of 4.5:1.
+  Every default text and link colour now passes 4.5:1 in both modes, and a test enforces it.
+- **1.0.0:** first release.
