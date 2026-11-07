@@ -33,6 +33,9 @@ jobs:
       - name: Validate production Blogger XML
         run: npm run validate:blogger
 
+      - name: Validate TBB Lite theme XML
+        run: npm run validate:lite
+
       - name: Audit SEO and performance risks
         run: |
           npm run audit:blogger

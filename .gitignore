@@ -40,3 +40,6 @@ next-env.d.ts
 /.sites-runtime/
 /outputs/
 /work/
+
+# Generated TBB Lite preview pages
+reports/tbb-lite-preview/

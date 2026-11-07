@@ -20,6 +20,7 @@ Production engineering repository for the
 - `AGENTS.md` — mandatory engineering rules
 - `docs/DEPLOYMENT.md` — test, release and rollback process
 - `docs/THEME-CUSTOMIZATION.md` — font, logo and subscriber-widget controls
+- `themes/tbb-lite/` — TBB Lite, an original free Blogger theme (CC BY 4.0), separate from the production theme
 
 ## Local checks
 
