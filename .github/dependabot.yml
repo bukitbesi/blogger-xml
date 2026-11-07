@@ -5,6 +5,11 @@ updates:
     schedule:
       interval: monthly
     open-pull-requests-limit: 3
+    ignore:
+      # vinext 1.x changes the build output (cloudflare: imports) and fails
+      # scripts/validate-artifact.sh; upgrade on purpose, not automatically.
+      - dependency-name: "vinext"
+        versions: [">=1.0.0"]
     groups:
       sites-runtime:
         patterns:
