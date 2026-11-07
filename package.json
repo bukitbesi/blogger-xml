@@ -11,13 +11,15 @@
     "build": "bash scripts/build-verified.sh",
     "start": "WRANGLER_LOG_PATH=.wrangler/logs vinext start",
     "test": "npm run build && node --test tests/*.test.mjs",
-    "test:blogger": "node --test tests/blogger-theme.test.mjs",
+    "test:blogger": "node --test tests/blogger-theme.test.mjs tests/tbb-lite.test.mjs",
     "validate:artifact": "bash scripts/validate-artifact.sh",
     "validate:blogger": "node scripts/validate-blogger.mjs",
     "audit:blogger": "node scripts/audit-blogger.mjs",
     "migrate:safe-seo": "node scripts/migrate-safe-seo.mjs",
     "lint": "bash scripts/sites-env.sh -- eslint . --ignore-pattern dist --ignore-pattern .next",
-    "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate"
+    "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate",
+    "validate:lite": "node scripts/validate-blogger.mjs themes/tbb-lite/tbb-lite.xml",
+    "preview:lite": "node scripts/preview-tbb-lite.mjs"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",
